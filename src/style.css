@@ -122,6 +122,7 @@ body{
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family: "open_sans_medium";
+    border-radius: 10px;
 
 }
 
@@ -153,5 +154,21 @@ body{
 
 .btn_ver_mas{
     height: 60px ;
-    margin: 0 auto;
+    margin: 2rem auto !important;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+
+
+}
+.item_footer{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+
+    
 }

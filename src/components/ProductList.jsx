@@ -41,7 +41,7 @@ export const ProductList = () => {
         <div className="product_list">
         {ver? (db && db.map((prod) => <Product key={prod.id} data={prod} />)):(db && db.slice(0,5).map((prod) => <Product key={prod.id} data={prod} />)) }
         </div>
-        {db &&!ver&& <Button onClick={()=>setVer(true)} className="btn_ver_mas" variant="contained">Ver Mas</Button>}
+        {db && <Button onClick={()=>setVer(!ver)} className="btn_ver_mas" variant="contained">{ver?"Ver Menos":"Ver Mas"}</Button>}
     </div>
     
     </>
