@@ -24,6 +24,16 @@ export const ProductList = () => {
       .get(url)
       .then((res) => {
         console.log(res,res.slice(0,5));
+        res=res.sort((a,b)=>{
+          if (a.rating.count > b.rating.count) {
+            return 1;
+          }
+          if (a.rating.count < b.rating.count) {
+            return -1;
+          }
+          // a must be equal to b
+          return 0;
+        })
 
         setDb(res);
         if (!res.err) {

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Cart } from "./Cart";
+import CartContext from "./contexts/CartContext";
+import { Modal } from "./Modal";
 import { Navegador } from "./Navegador";
 export const Header = () => {
+  const {isOpen_cart,closeModal_cart,openModal_cart}=useContext(CartContext)
   return (
     <header className="header">
       <div className="header_cont">
@@ -34,10 +38,13 @@ export const Header = () => {
         <div className="header_cont_center__icons">
           <img src="../src/assets/hombre.png" className="icon header_icon" alt="" />
           <img src="../src/assets/favorite.png" className="icon header_icon" alt="" />
-          <img src="../src/assets/cart.png" className="icon header_icon" alt="" />
+          <img onClick={openModal_cart} src="../src/assets/cart.png" className="icon header_icon" alt="" />
+
         </div>
       </div>
       <Navegador />
+      <Cart/>
     </header>
+    
   );
 };
